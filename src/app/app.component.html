@@ -1,0 +1,173 @@
+<!--Home page context-->
+<mat-toolbar color="primary" *ngIf="context === 'home'" class="toolbar">
+    <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/itemDashboard" (click)="changeContext('item')"><mat-icon>description</mat-icon><span>ITEM</span></button>
+        <button mat-menu-item (click)="changeContext('client')"><mat-icon>account_box</mat-icon><span>CLIENT</span></button>
+        <button mat-menu-item (click)="changeContext('receipt')"><mat-icon>line_style</mat-icon><span>RECEIPT</span></button>
+        <button mat-menu-item (click)="changeContext('appointment')"><mat-icon>event</mat-icon><span>APPOINTMENT</span></button>
+        <button mat-menu-item (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+      </mat-menu>
+    <button mat-button routerLink="/itemDashboard" (click)="changeContext('item')"><mat-icon>description</mat-icon><span>ITEM</span></button>
+    <button mat-button (click)="changeContext('client')"><mat-icon>account_box</mat-icon><span>CLIENT</span></button>
+    <button mat-button (click)="changeContext('receipt')"><mat-icon>line_style</mat-icon><span>RECEIPT</span></button>
+    <button mat-button (click)="changeContext('appointment')"><mat-icon>event</mat-icon><span>APPOINTMENT</span></button>
+    <button mat-button class="login" (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+    <button mat-button class="help" (click)="changeContext('help')"><mat-icon>help</mat-icon><span>HELP</span></button>
+</mat-toolbar>
+
+<!--Item page context-->
+
+<mat-toolbar color="primary" *ngIf="context === 'item'" class="toolbar">
+  <mat-icon>description</mat-icon>
+  <mat-icon [matMenuTriggerFor]="menuItem">menu</mat-icon>
+    <mat-menu #menuItem="matMenu">
+      <button mat-menu-item (click)="changeContext('home')"><mat-icon>home</mat-icon><span>HOME</span></button>
+      <button mat-menu-item (click)="changeContext('client')"><mat-icon>account_box</mat-icon><span>CLIENT</span></button>
+      <button mat-menu-item (click)="changeContext('receipt')"><mat-icon>line_style</mat-icon><span>RECEIPT</span></button>
+      <button mat-menu-item (click)="changeContext('appointment')"><mat-icon>event</mat-icon><span>APPOINTMENT</span></button>
+      <button mat-menu-item (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+    </mat-menu>
+  <button mat-button routerLink="/itemDashboard"><mat-icon>dashboard</mat-icon><span>DASHBOARD</span></button>
+  <button mat-button><mat-icon>add_box</mat-icon><span>CREATE ITEM</span></button>
+  <button mat-button><mat-icon>delete</mat-icon><span>DELETE ITEM</span></button>
+  <button mat-button class="login" (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+  <button mat-button class="help" (click)="changeContext('help')"><mat-icon>help</mat-icon><span>HELP</span></button>
+</mat-toolbar>
+
+<!--Client page context-->
+
+<mat-toolbar color="primary" *ngIf="context === 'client'" class="toolbar">
+  <mat-icon>account_box</mat-icon>
+  <mat-icon [matMenuTriggerFor]="menuClient">menu</mat-icon>
+    <mat-menu #menuClient="matMenu">
+      <button mat-menu-item (click)="changeContext('home')"><mat-icon>home</mat-icon><span>HOME</span></button>
+      <button mat-menu-item routerLink="/itemDashboard" (click)="changeContext('item')"><mat-icon>description</mat-icon><span>ITEM</span></button>
+      <button mat-menu-item (click)="changeContext('receipt')"><mat-icon>line_style</mat-icon><span>RECEIPT</span></button>
+      <button mat-menu-item (click)="changeContext('appointment')"><mat-icon>event</mat-icon><span>APPOINTMENT</span></button>
+      <button mat-menu-item (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+    </mat-menu>
+  <button mat-button><mat-icon>dashboard</mat-icon><span>DASHBOARD</span></button>
+  <button mat-button><mat-icon>add_box</mat-icon><span>CREATE CLIENT</span></button>
+  <button mat-button><mat-icon>delete</mat-icon><span>DELETE CLIENT</span></button>
+  <button mat-button class="login" (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+  <button mat-button class="help" (click)="changeContext('help')"><mat-icon>help</mat-icon><span>HELP</span></button>
+</mat-toolbar>
+
+<!--Receipt page context-->
+
+<mat-toolbar color="primary" *ngIf="context === 'receipt'" class="toolbar">
+  <mat-icon>line_style</mat-icon>
+  <mat-icon [matMenuTriggerFor]="menuReceipt">menu</mat-icon>
+  <mat-menu #menuReceipt="matMenu">
+    <button mat-menu-item (click)="changeContext('home')"><mat-icon>home</mat-icon><span>HOME</span></button>
+    <button mat-menu-item routerLink="/itemDashboard" (click)="changeContext('item')"><mat-icon>description</mat-icon><span>ITEM</span></button>
+    <button mat-menu-item (click)="changeContext('client')"><mat-icon>account_box</mat-icon><span>CLIENT</span></button>
+    <button mat-menu-item (click)="changeContext('appointment')"><mat-icon>event</mat-icon><span>APPOINTMENT</span></button>
+    <button mat-menu-item (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+  </mat-menu>
+  <button mat-button><mat-icon>dashboard</mat-icon><span>DASHBOARD</span></button>
+  <button mat-button><mat-icon>add_box</mat-icon><span>CREATE RECEIPT</span></button>
+  <button mat-button><mat-icon>delete</mat-icon><span>DELETE RECEIPT</span></button>
+  <button mat-button class="login" (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+  <button mat-button class="help" (click)="changeContext('help')"><mat-icon>help</mat-icon><span>HELP</span></button>
+</mat-toolbar>
+
+<!--Appointment page context-->
+
+<mat-toolbar color="primary" *ngIf="context === 'appointment'" class="toolbar">
+  <mat-icon>event</mat-icon>
+  <mat-icon [matMenuTriggerFor]="menuAppointment">menu</mat-icon>
+  <mat-menu #menuAppointment="matMenu">
+    <button mat-menu-item (click)="changeContext('home')"><mat-icon>home</mat-icon><span>HOME</span></button>
+    <button mat-menu-item routerLink="/itemDashboard" (click)="changeContext('item')"><mat-icon>description</mat-icon><span>ITEM</span></button>
+    <button mat-menu-item (click)="changeContext('client')"><mat-icon>account_box</mat-icon><span>CLIENT</span></button>
+    <button mat-menu-item (click)="changeContext('receipt')"><mat-icon>line_style</mat-icon><span>RECEIPT</span></button>
+    <button mat-menu-item (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+  </mat-menu>
+  <button mat-button><mat-icon>dashboard</mat-icon><span>DASHBOARD</span></button>
+  <button mat-button><mat-icon>add_box</mat-icon><span>CREATE APPOINTMENT</span></button>
+  <button mat-button><mat-icon>delete</mat-icon><span>DELETE APPOINTMENT</span></button>
+  <button mat-button class="login" (click)="changeContext('login')"><mat-icon>account_circle</mat-icon><span>LOGIN</span></button>
+  <button mat-button class="help" (click)="changeContext('help')"><mat-icon>help</mat-icon><span>HELP</span></button>
+</mat-toolbar>
+<!--Card -->
+      <mat-card class="menuMatCard">
+        <mat-card-header>
+          <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
+          <mat-card-title>Name: Ban</mat-card-title>
+          <mat-card-subtitle>Surname: Lucian</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://source.unsplash.com/random/300x200">
+        <mat-card-content>
+          <button mat-raised-button class="menuItem" color="primary" (click)="changeContext('home')"><span>HOME</span></button>
+          <button mat-raised-button class="menuItem" color="primary" [matMenuTriggerFor]="item" ><span>ITEM</span></button>
+          <mat-menu #item>
+            <button mat-raised-button routerLink="/itemDashboard" (click)="consoleLog()" class="subMenu">DASHBOARD</button>
+            <button mat-raised-button class="subMenu">ADD ITEM</button>
+            <button mat-raised-button class="subMenu">DELETE ITEM</button>
+          </mat-menu>
+          <button mat-raised-button class="menuItem" color="primary"  [matMenuTriggerFor]="client" ><span>CLIENT</span></button>
+          <mat-menu #client>
+            <button mat-raised-button class="subMenu"  >DASHBOARD</button>
+            <button mat-raised-button class="subMenu"  >ADD CLIENT</button>
+            <button mat-raised-button class="subMenu"  >DELETE CLIENT</button>
+          </mat-menu>
+          <button mat-raised-button class="menuItem" color="primary" [matMenuTriggerFor]="receipt" >RECEIPT</button>
+          <mat-menu #receipt>
+            <button mat-raised-button class="subMenu">DASHBOARD</button>
+            <button mat-raised-button class="subMenu">ADD RECEIPT</button>
+            <button mat-raised-button class="subMenu">DELETE RECEIPT</button>
+          </mat-menu>
+          <button mat-raised-button class="menuItem" color="primary" [matMenuTriggerFor]="appointment" >APPOINTMENT</button>
+          <mat-menu #appointment>
+            <button mat-raised-button class="subMenu">DASHBOARD</button>
+            <button mat-raised-button class="subMenu">ADD APPOINTMENT</button>
+            <button mat-raised-button class="subMenu">DELETE APPOINTMENT</button>
+          </mat-menu>
+          <button mat-raised-button class="menuItem" color="primary" >LOGIN</button>
+          <button mat-raised-button class="menuItem" color="primary" >HELP</button>
+        </mat-card-content>
+      </mat-card>
+<router-outlet></router-outlet>
+
+
+<!--Menu under Card-->
+
+
+<!--<table style="display: list-item ">-->
+  <!--<tr>-->
+    <!--<td>-->
+      <!--<mat-card class="menuMatCard">-->
+        <!--<button mat-raised-button class="menuMatCard" color="primary" (click)="changeContext('home')">HOME</button>-->
+        <!--<button mat-raised-button class="menuMatCard" color="primary" [matMenuTriggerFor]="item" >ITEM</button>-->
+        <!--<mat-menu #item>-->
+          <!--<button mat-raised-button class="subMenu">DASHBOARD</button>-->
+          <!--<button mat-raised-button class="subMenu">ADD ITEM</button>-->
+          <!--<button mat-raised-button class="subMenu">DELETE ITEM</button>-->
+        <!--</mat-menu>-->
+        <!--<button mat-raised-button class="menuMatCard" color="primary"  [matMenuTriggerFor]="client" >CLIENT</button>-->
+        <!--<mat-menu #client>-->
+          <!--<button mat-raised-button class="subMenu"  >DASHBOARD</button>-->
+          <!--<button mat-raised-button class="subMenu"  >ADD CLIENT</button>-->
+          <!--<button mat-raised-button class="subMenu"  >DELETE CLIENT</button>-->
+        <!--</mat-menu>-->
+        <!--<button mat-raised-button class="menuMatCard" color="primary" [matMenuTriggerFor]="receipt" >RECEIPT</button>-->
+        <!--<mat-menu #receipt>-->
+          <!--<button mat-raised-button class="subMenu">DASHBOARD</button>-->
+          <!--<button mat-raised-button class="subMenu">ADD RECEIPT</button>-->
+          <!--<button mat-raised-button class="subMenu">DELETE RECEIPT</button>-->
+        <!--</mat-menu>-->
+        <!--<button mat-raised-button class="menuMatCard" color="primary" [matMenuTriggerFor]="appointment" >APPOINTMENT</button>-->
+        <!--<mat-menu #appointment>-->
+          <!--<button mat-raised-button class="subMenu">DASHBOARD</button>-->
+          <!--<button mat-raised-button class="subMenu">ADD APPOINTMENT</button>-->
+          <!--<button mat-raised-button class="subMenu">DELETE APPOINTMENT</button>-->
+        <!--</mat-menu>-->
+        <!--<button mat-raised-button class="menuMatCard" color="primary" >LOGIN</button>-->
+        <!--<button mat-raised-button class="menuMatCard" color="primary" >HELP</button>-->
+      <!--</mat-card>-->
+    <!--</td>-->
+  <!--</tr>-->
+<!--</table>-->
+

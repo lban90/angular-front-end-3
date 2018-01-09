@@ -1,0 +1,30 @@
+.help{
+  left: 48%;
+}
+
+.login{
+  left: 48%;
+}
+
+.menuItem{
+  width: 100%;
+}
+
+.menuMatCard{
+  width: 15%;
+}
+
+.subMenu{
+  width: 280px;
+  allign: center;
+}
+
+.subMenu:hover{
+  background-color: rgba(236, 0, 255, 0.21);
+}
+
+.toolbar{
+  width: 100%;
+}
+
+
